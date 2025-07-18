@@ -1,0 +1,39 @@
+# Fichiers sensibles et secrets
+.env
+*.pem
+ssh_key*
+client*.conf
+client*_qr.*
+deployment_info.txt
+
+# Terraform
+terraform/
+.terraform/
+*.tfstate*
+.terraform.lock.hcl
+terraform.tfvars
+
+# Logs et temporaires
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
+
+# Configurations locales
+config/
+secrets/
+
+# AWS
+credentials
+config
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Backup
+*.backup
+*.bak
