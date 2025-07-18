@@ -8,6 +8,8 @@ deployment_info.txt
 
 # Terraform
 terraform/
+!terraform/*.tf
+!terraform/*.tpl
 .terraform/
 *.tfstate*
 .terraform.lock.hcl
