@@ -57,8 +57,8 @@ Créez une politique personnalisée avec seulement les permissions nécessaires.
 cp .env.example .env
 nano .env
 
-# Remplacez les exemples par vos vraies clés :
-AWS_ACCESS_KEY_ID=AKIA1234567890EXAMPLE      # Votre vraie clé
+# Remplacez les valeurs d'exemple par vos vraies clés :
+AWS_ACCESS_KEY_ID=AKIA1234567890EXAMPLE      # Remplacez par votre vraie clé
 AWS_SECRET_ACCESS_KEY=VotreVraieClé40Caractères/Avec+Des/Symboles
 ```
 

@@ -13,9 +13,12 @@ brew install terraform awscli qrencode
 
 ### 2. Configuration
 ```bash
-# Cloner le projet
-git clone <votre-repo>
-cd free_vpn
+# Cloner le projet (choisissez votre plateforme)
+git clone https://github.com/Dourin/AwsFreeWireguard.git
+# OU
+git clone git@gitlab.com:Muncidor/awsfreewireguard.git
+
+cd AwsFreeWireguard
 
 # Configurer les variables avec exemples concrets
 cp .env.example .env
@@ -69,6 +72,9 @@ nano .env  # Remplacer par vos vraies clés AWS
 ```
 
 ## Commandes Utiles
+
+**Note** : Pour récupérer l'IP de votre instance : `terraform -chdir=terraform output instance_public_ip`
+
 ```bash
 # Validation complète
 ./validate_config.sh
@@ -76,11 +82,11 @@ nano .env  # Remplacer par vos vraies clés AWS
 # Statut de l'infrastructure
 terraform -chdir=terraform show
 
-# Connexion SSH au serveur
-ssh -i terraform/ssh_key.pem ubuntu@<IP>
+# Connexion SSH au serveur (remplacez YOUR_INSTANCE_IP par l'IP de votre instance)
+ssh -i terraform/ssh_key.pem ubuntu@YOUR_INSTANCE_IP
 
 # Vérifier WireGuard sur le serveur
-ssh -i terraform/ssh_key.pem ubuntu@<IP> "sudo wg show"
+ssh -i terraform/ssh_key.pem ubuntu@YOUR_INSTANCE_IP "sudo wg show"
 ```
 
 ## Important
@@ -101,13 +107,13 @@ terraform -chdir=terraform validate
 ./validate_config.sh
 
 # Récupération configuration client
-ssh -i terraform/ssh_key.pem ubuntu@<IP> "cat client1.conf"
+ssh -i terraform/ssh_key.pem ubuntu@YOUR_INSTANCE_IP "cat client1.conf"
 ```
 
 ## Monitoring
 - **Utilisation AWS** : Console AWS Billing
 - **Statut VPN** : `./validate_config.sh`
-- **Logs serveur** : `ssh -i terraform/ssh_key.pem ubuntu@<IP> "sudo journalctl -u wg-quick@wg0"`
+- **Logs serveur** : `ssh -i terraform/ssh_key.pem ubuntu@YOUR_INSTANCE_IP "sudo journalctl -u wg-quick@wg0"`
 
 ---
 **PRET !** Votre VPN personnel est opérationnel sur AWS Free Tier.
