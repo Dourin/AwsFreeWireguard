@@ -2,7 +2,7 @@
 
 Solution complète de déploiement automatisé d'un serveur VPN WireGuard sur AWS Free Tier avec Terraform. Cette solution permet de créer rapidement et facilement un VPN personnel sécurisé sans frais (dans les limites du Free Tier AWS).
 
-## �� Démarrage Rapide
+## Démarrage Rapide
 
 Consultez le [Guide de Démarrage Rapide](QUICKSTART.md) pour une installation en 5 minutes.
 
