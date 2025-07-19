@@ -1,6 +1,6 @@
 # Guide de Démarrage Rapide - VPN WireGuard AWS
 
-## 🚀 Installation Express (5 minutes)
+## Installation Express (5 minutes)
 
 ### 1. Prérequis
 ```bash
@@ -46,17 +46,17 @@ nano .env  # Remplacer par vos vraies clés AWS
 # - client1_qr.png (Mobile)
 ```
 
-## 📱 Configuration Mobile
+## Configuration Mobile
 1. Installer WireGuard (PlayStore/AppStore)
 2. Scanner le QR code affiché ou importer client1_qr.png
 3. Activer la connexion
 
-## 💻 Configuration PC/Mac
+## Configuration PC/Mac
 1. Installer WireGuard : https://www.wireguard.com/install/
 2. Importer le fichier `terraform/client1.conf`
 3. Activer la connexion
 
-## 💰 Gestion des Coûts
+## Gestion des Coûts
 ```bash
 # Arrêter pour économiser (~0.10$/mois au lieu de ~8$/mois)
 ./stop_vpn.sh
@@ -68,7 +68,7 @@ nano .env  # Remplacer par vos vraies clés AWS
 ./destroy_vpn.sh
 ```
 
-## 🔧 Commandes Utiles
+## Commandes Utiles
 ```bash
 # Validation complète
 ./validate_config.sh
@@ -83,13 +83,13 @@ ssh -i terraform/ssh_key.pem ubuntu@<IP>
 ssh -i terraform/ssh_key.pem ubuntu@<IP> "sudo wg show"
 ```
 
-## ⚠️ Important
+## Important
 - **Surveillez vos coûts AWS** : https://console.aws.amazon.com/billing/
 - **Free Tier** : 750h/mois instance + 15GB transfert sortant
 - **IP change** à chaque redémarrage - reconfiguration automatique
 - **Détruisez l'infrastructure** quand vous n'en avez plus besoin
 
-## 🆘 Dépannage Express
+## Dépannage Express
 ```bash
 # Problème de connexion AWS
 aws sts get-caller-identity
@@ -104,10 +104,10 @@ terraform -chdir=terraform validate
 ssh -i terraform/ssh_key.pem ubuntu@<IP> "cat client1.conf"
 ```
 
-## 📊 Monitoring
+## Monitoring
 - **Utilisation AWS** : Console AWS Billing
 - **Statut VPN** : `./validate_config.sh`
 - **Logs serveur** : `ssh -i terraform/ssh_key.pem ubuntu@<IP> "sudo journalctl -u wg-quick@wg0"`
 
 ---
-✅ **Prêt !** Votre VPN personnel est opérationnel sur AWS Free Tier.
+**PRET !** Votre VPN personnel est opérationnel sur AWS Free Tier.

@@ -1,9 +1,9 @@
 # Guide AWS - Création des Clés d'Accès
 
-## 🎯 Objectif
+## Objectif
 Obtenir les clés AWS nécessaires pour déployer votre VPN WireGuard.
 
-## 📋 Étapes Détaillées
+## Étapes Détaillées
 
 ### 1. Connexion à AWS
 1. Allez sur https://console.aws.amazon.com/
@@ -37,7 +37,7 @@ Créez une politique personnalisée avec seulement les permissions nécessaires.
 2. Cliquez "Créer un utilisateur"
 
 ### 6. Récupération des Clés
-🚨 **IMPORTANT** : Cette étape ne peut être faite qu'UNE SEULE FOIS !
+**IMPORTANT** : Cette étape ne peut être faite qu'UNE SEULE FOIS !
 
 1. Sur la page de succès, vous verrez :
    - **Access Key ID** : Format `AKIA...` (20 caractères)
@@ -49,7 +49,7 @@ Créez une politique personnalisée avec seulement les permissions nécessaires.
    - Cliquez "Télécharger .csv" (recommandé)
    - Ou notez les clés dans un endroit sûr
 
-## 🔧 Configuration dans le Projet
+## Configuration dans le Projet
 
 ### Modification du fichier .env
 ```bash
@@ -64,24 +64,24 @@ AWS_SECRET_ACCESS_KEY=VotreVraieClé40Caractères/Avec+Des/Symboles
 
 ### Exemple de Format Attendu
 ```
-✅ CORRECT:
+CORRECT:
 AWS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE
 AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
 
-❌ INCORRECT:
+INCORRECT:
 AWS_ACCESS_KEY_ID=ma-clé-aws
 AWS_SECRET_ACCESS_KEY=mon-secret
 ```
 
-## 🔐 Sécurité et Bonnes Pratiques
+## Sécurité et Bonnes Pratiques
 
-### ✅ À Faire
+### À Faire
 - Gardez vos clés secrètes et ne les partagez jamais
 - Le fichier `.env` est protégé par `.gitignore`
 - Téléchargez le CSV de sauvegarde AWS
 - Créez un utilisateur dédié pour le VPN
 
-### ❌ À Éviter
+### À Éviter
 - Ne jamais commiter les clés dans Git
 - Ne pas utiliser vos clés root/administrateur
 - Ne pas partager vos clés par email/chat
@@ -95,7 +95,7 @@ AWS_SECRET_ACCESS_KEY=mon-secret
 4. Créez une nouvelle clé d'accès
 5. Supprimez l'ancienne clé après avoir testé la nouvelle
 
-## ✅ Validation
+## Validation
 Après configuration, testez avec :
 ```bash
 ./validate_config.sh
@@ -103,12 +103,12 @@ Après configuration, testez avec :
 
 Vous devriez voir :
 ```
-✅ AWS_ACCESS_KEY_ID configuré
-✅ AWS_SECRET_ACCESS_KEY configuré
-✅ Connexion AWS réussie
+[PASS] AWS_ACCESS_KEY_ID configuré
+[PASS] AWS_SECRET_ACCESS_KEY configuré
+[PASS] Connexion AWS réussie
 ```
 
-## 🆘 Dépannage
+## Dépannage
 
 ### Erreur "Access Denied"
 - Vérifiez que les permissions EC2FullAccess et VPCFullAccess sont attachées
@@ -124,4 +124,4 @@ Vous devriez voir :
 
 ---
 
-🎉 **Une fois configuré, vous pourrez déployer votre VPN avec `./deploy_vpn.sh` !**
+**Une fois configuré, vous pourrez déployer votre VPN avec `./deploy_vpn.sh` !**
