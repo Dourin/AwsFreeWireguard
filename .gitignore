@@ -39,3 +39,8 @@ config
 # Backup
 *.backup
 *.bak
+
+# Fichiers de développement
+todo.txt
+*.backup
+*.bak
